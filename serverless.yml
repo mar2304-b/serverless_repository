@@ -1,0 +1,16 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: practicaNode
+frameworkVersion: '4'
+plugins:
+  - serverless-offline
+provider:
+  name: aws
+  runtime: python3.12
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
